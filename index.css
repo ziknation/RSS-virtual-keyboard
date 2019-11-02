@@ -1,0 +1,43 @@
+.table{
+  width: 70%;
+  min-width: 1100px;
+  margin: 0 auto;
+}
+
+.tr{
+  display: flex;
+  justify-content: space-between;
+}
+
+.td{
+  height: 45px;
+  flex: 1;
+  margin: 3px;
+  border-radius: 4px;
+  background-color: #3A424E;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.td:active{
+  background-color: #5571EE;
+}
+
+.tr .wide{
+  flex: 2;
+}
+
+.space{
+  flex: 10;
+}
+
+.textarea{
+  width: 75%;
+  min-width: 1100px;
+  height: 400px;
+  display: block;
+  margin: 0 auto;
+}
