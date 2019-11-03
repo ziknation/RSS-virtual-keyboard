@@ -6,6 +6,7 @@ runOnKeys(langChange, 'Shift', 'Control');
 let russian = true;
 let caps = false;
 let focus = false;
+checkLocalStorage();
 
 function createRussianKeys(){
   let keys = [
@@ -267,10 +268,12 @@ function langChange(){
   removeTable();
   if (russian){
     russian = false;
+    localStorage.setItem('lang', 'eng');
     createEnglishKeys();
   }
   else{
     russian = true;
+    localStorage.setItem('lang', 'rus');
     createRussianKeys();
   }
   capsCheck();
@@ -306,6 +309,7 @@ function writing(event){
 function capsChanges(){
   if (caps){
     caps = false;
+    localStorage.setItem('caps','no');
     let tds = document.querySelectorAll('td');
     for (let i = 0; i < tds.length; i++){
       if(tds[i].innerHTML.length == 1){
@@ -316,6 +320,7 @@ function capsChanges(){
   }
   else{
     caps = true;
+    localStorage.setItem('caps','yes');
     let tds = document.querySelectorAll('td');
     for (let i = 0; i < tds.length; i++){
       if(tds[i].innerHTML.length == 1){
@@ -361,6 +366,15 @@ function clickOnKeyboard(event){
     textarea.value += '\n';
   }
   else if (event.target.innerHTML == 'CapsLock'){
+    capsChanges();
+  }
+}
+
+function checkLocalStorage(){
+  if (localStorage.getItem('lang') == 'eng'){
+    langChange();
+  }
+  if (localStorage.getItem('caps') == 'yes'){
     capsChanges();
   }
 }
