@@ -24,6 +24,8 @@
 
 .td:active{
   background-color: #5571EE;
+  border-radius: 50%;
+  transition: 200ms;
 }
 
 .tr .wide{
@@ -33,10 +35,14 @@
 
 .tr .wide:active{
   background-color: #5571EE;
+  border-radius: 50%;
+  transition: 200ms;
 }
 
 .active{
   background-color: #5571EE !important;
+  border-radius: 50% !important;
+  transition: 200ms !important;
 }
 
 .space{

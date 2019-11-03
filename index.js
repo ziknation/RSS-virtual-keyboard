@@ -24,6 +24,7 @@ function createRussianKeys(){
   tr.classList.add('tr');
   keys.forEach(function(k, j){
     let td = document.createElement('td');
+    td.addEventListener('click', clickOnKeyboard);
     td.append(k);
     td.classList.add('td');
     tr.append(td);
@@ -63,6 +64,7 @@ function createEnglishKeys(){
   tr.classList.add('tr');
   keys.forEach(function(k, j){
     let td = document.createElement('td');
+    td.addEventListener('click', clickOnKeyboard);
     td.append(k);
     td.classList.add('td');
     tr.append(td);
@@ -287,6 +289,15 @@ function writing(event){
         else if (event.key == 'Tab'){
           textarea.value += '    ';
         }
+        else if (event.key == 'Backspace'){
+          textarea.value = textarea.value.slice(0,textarea.value.length - 1);
+        }
+        else if (event.key == 'Enter'){
+          textarea.value += '\n';
+        }
+      }
+      if (tds[i].innerHTML == event.code){
+        textarea.value += ' ';
       }
     }
   }
@@ -332,5 +343,24 @@ function focusCheck(){
   }
   else{
     focus = true;
+  }
+}
+
+function clickOnKeyboard(event){
+  let textarea = document.querySelector('textarea');
+  if (event.target.innerHTML.length == 1){
+    textarea.value += event.target.innerHTML;
+  }
+  else if (event.target.innerHTML == 'Tab'){
+    textarea.value += '    ';
+  }
+  else if (event.target.innerHTML == 'Backspace'){
+    textarea.value = textarea.value.slice(0,textarea.value.length - 1);
+  }
+  else if (event.target.innerHTML == 'Enter'){
+    textarea.value += '\n';
+  }
+  else if (event.target.innerHTML == 'CapsLock'){
+    capsChanges();
   }
 }
