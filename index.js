@@ -289,14 +289,14 @@ function writing(event){
         else if (event.key == 'Tab'){
           textarea.value += '    ';
         }
-        else if (event.key == 'Backspace'){
+        else if (tds[i].innerHTML == 'Backspace'){
           textarea.value = textarea.value.slice(0,textarea.value.length - 1);
         }
         else if (event.key == 'Enter'){
           textarea.value += '\n';
         }
       }
-      if (tds[i].innerHTML == event.code){
+      if (tds[i].innerHTML == event.code && tds[i].innerHTML == 'Space'){
         textarea.value += ' ';
       }
     }
