@@ -27,7 +27,16 @@
 }
 
 .tr .wide{
+  background-color: #1C232E;
   flex: 2;
+}
+
+.tr .wide:active{
+  background-color: #5571EE;
+}
+
+.active{
+  background-color: #5571EE !important;
 }
 
 .space{
