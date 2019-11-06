@@ -1,0 +1,55 @@
+.table{
+  width: 70%;
+  min-width: 1100px;
+  margin: 0 auto;
+}
+
+.tr{
+  display: flex;
+  justify-content: space-between;
+}
+
+.td{
+  height: 45px;
+  flex: 1;
+  margin: 3px;
+  border-radius: 4px;
+  background-color: #3A424E;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.td:active{
+  background-color: #5571EE;
+  transition: 200ms;
+}
+
+.tr .wide{
+  background-color: #1C232E;
+  flex: 2;
+}
+
+.tr .wide:active{
+  background-color: #5571EE;
+  transition: 200ms;
+}
+
+.active{
+  background-color: #5571EE !important;
+  transition: 200ms !important;
+}
+
+.space{
+  flex: 10;
+}
+
+.textarea{
+  width: 75%;
+  min-width: 1100px;
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+}
